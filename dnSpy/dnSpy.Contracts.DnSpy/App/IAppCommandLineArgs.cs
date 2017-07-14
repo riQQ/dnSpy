@@ -76,6 +76,12 @@ namespace dnSpy.Contracts.App {
 		/// <summary>Tool windows to hide</summary>
 		string HideToolWindow { get; }
 
+		/// <summary>Debug the program</summary>
+		string DebugProcess { get; }
+
+		/// <summary>Args for the program to debug</summary>
+		string DebugProcessArgs { get; }
+
 		/// <summary>
 		/// Returns true if the argument is present
 		/// </summary>

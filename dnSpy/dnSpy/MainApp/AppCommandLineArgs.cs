@@ -43,6 +43,8 @@ namespace dnSpy.MainApp {
 		public bool? FullScreen { get; }
 		public string ShowToolWindow { get; }
 		public string HideToolWindow { get; }
+		public string DebugProcess { get; }
+		public string DebugProcessArgs { get; }
 
 		readonly Dictionary<string, string> userArgs = new Dictionary<string, string>();
 		readonly List<string> filenames = new List<string>();
@@ -67,6 +69,8 @@ namespace dnSpy.MainApp {
 			FullScreen = null;
 			ShowToolWindow = string.Empty;
 			HideToolWindow = string.Empty;
+			DebugProcess = string.Empty;
+			DebugProcessArgs = string.Empty;
 
 			bool canParseCommands = true;
 			for (int i = 0; i < args.Length; i++) {
@@ -155,6 +159,13 @@ namespace dnSpy.MainApp {
 						HideToolWindow = next;
 						i++;
 						break;
+
+					case "--debug":
+						DebugProcess = next;
+						i += 2;
+						if (i < args.Length)
+							DebugProcessArgs = string.Join(" ", args.Skip(i));
+						return;
 
 					default:
 						int sepIndex = arg.IndexOf(ARG_SEP);

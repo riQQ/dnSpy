@@ -37,6 +37,7 @@
     <NoWarn>1685</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AppCommandLineArgsHandler.cs" />
     <Compile Include="AppMenus.cs" />
     <Compile Include="Breakpoints\Breakpoint.cs" />
     <Compile Include="Breakpoints\BreakpointColumnConverter.cs" />

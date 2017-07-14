@@ -1336,5 +1336,9 @@ namespace dnSpy.Debugger {
 
 			return true;
 		}
+
+		public void DebugAssembly(DebugProcessVM debugProcVM, bool askUser = true) {
+			DebugAssembly2(GetDebugAssemblyOptions(debugProcVM, askUser));
+		}
 	}
 }
